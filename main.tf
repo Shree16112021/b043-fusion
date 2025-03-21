@@ -7,4 +7,11 @@ resource "aws_vpc" "myvpctest" {
   
   }
 
+resource "aws_subnet" "public" {
+  vpc_id     = aws_vpc.myvpctest.id
+  cidr_block = "15.15.1.0/24"
 
+  tags = {
+    Name = "public"
+  }
+}
