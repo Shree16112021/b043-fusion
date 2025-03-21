@@ -15,3 +15,13 @@ resource "aws_subnet" "public" {
     Name = "public"
   }
 }
+resource "aws_subnet" "private" {
+  vpc_id     = aws_vpc.myvpctest.id
+  cidr_block = "15.15.2.0/24"
+
+  tags = {
+    Name = "private"
+  }
+}
+
+
